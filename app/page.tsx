@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 
 // ============ LOGO COMPONENT ============
-const Logo = ({ width = 280, color = "#E07850" }: { width?: number, color?: string }) => (
+const Logo = ({ width = 280, color = "#E07850", glow = false }: { width?: number, color?: string, glow?: boolean }) => (
   <svg 
     viewBox="0 0 225 50" 
     width={width} 
@@ -13,6 +13,11 @@ const Logo = ({ width = 280, color = "#E07850" }: { width?: number, color?: stri
     strokeWidth="2.2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    style={{
+      filter: glow 
+        ? `drop-shadow(0 0 8px ${color}) drop-shadow(0 0 25px ${color}80) drop-shadow(0 0 50px ${color}40)` 
+        : 'none'
+    }}
   >
     <path d="M 5 2 L 35 2" />
     <path d="M 5 25 L 28 25" />
@@ -80,37 +85,15 @@ export default function Home() {
           </span>
         </div>
 
-        {/* Logo */}
-const Logo = ({ width = 280, color = "#E07850", glow = false }: { width?: number, color?: string, glow?: boolean }) => (
-  <svg 
-    viewBox="0 0 225 50" 
-    width={width} 
-    height={width * 0.222}
-    fill="none" 
-    stroke={color}
-    strokeWidth="2.2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    style={{
-      filter: glow 
-        ? `drop-shadow(0 0 8px ${color}) drop-shadow(0 0 25px ${color}80) drop-shadow(0 0 50px ${color}40)` 
-        : 'none'
-    }}
-  >
-    <path d="M 5 2 L 35 2" />
-    <path d="M 5 25 L 28 25" />
-    <path d="M 5 48 L 35 48" />
-    <path d="M 50 2 L 69 30 L 88 2" />
-    <path d="M 50 12 L 50 48" />
-    <path d="M 88 12 L 88 48" />
-    <path d="M 105 2 L 105 48" />
-    <path d="M 111 2 L 124 2 Q 136 2 136 13.5 Q 136 25 124 25 L 111 25" />
-    <path d="M 111 25 L 127 25 Q 141 25 141 36.5 Q 141 48 127 48 L 111 48" />
-    <path d="M 158 2 L 158 48" />
-    <path d="M 164 2 L 179 2 Q 193 2 193 13.5 Q 193 25 179 25 L 164 25" />
-    <path d="M 174 25 L 202 48" />
-  </svg>
-)
+        {/* Logo with GLOW */}
+        <div style={{
+          opacity: isLoaded ? 1 : 0,
+          transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+          transition: 'all 0.8s ease 0.15s',
+          marginBottom: '20px'
+        }}>
+          <Logo width={420} glow />
+        </div>
 
         {/* Secondary Tagline */}
         <p style={{
@@ -222,42 +205,42 @@ const Logo = ({ width = 280, color = "#E07850", glow = false }: { width?: number
       </section>
 
       {/* ============ VALUES SECTION ============ */}
-<section style={{ backgroundColor: BLACK, padding: '100px 24px' }}>
-  <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-    <p style={{
-      fontSize: '11px',
-      letterSpacing: '4px',
-      color: '#57534e',
-      textTransform: 'uppercase',
-      textAlign: 'center',
-      marginBottom: '72px'
-    }}>
-      What We Believe
-    </p>
+      <section style={{ backgroundColor: BLACK, padding: '100px 24px' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <p style={{
+            fontSize: '11px',
+            letterSpacing: '4px',
+            color: '#57534e',
+            textTransform: 'uppercase',
+            textAlign: 'center',
+            marginBottom: '72px'
+          }}>
+            What We Believe
+          </p>
 
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-      gap: '56px'
-    }}>
-      <div style={{ textAlign: 'center' }}>
-        <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>01</p>
-        <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Transparency</h3>
-        <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>Every ingredient, every source, every test result. Published, not hidden.</p>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>02</p>
-        <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Precision</h3>
-        <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>100-200% DV. No mega-doses. Your body uses what it needs.</p>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>03</p>
-        <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Evolution</h3>
-        <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>Track, measure, adjust. Your formula grows with you.</p>
-      </div>
-    </div>
-  </div>
-</section>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '56px'
+          }}>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>01</p>
+              <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Transparency</h3>
+              <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>Every ingredient, every source, every test result. Published, not hidden.</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>02</p>
+              <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Precision</h3>
+              <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>100-200% DV. No mega-doses. Your body uses what it needs.</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>03</p>
+              <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Evolution</h3>
+              <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>Track, measure, adjust. Your formula grows with you.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ============ BOTTOM CTA ============ */}
       <section style={{ backgroundColor: BLACK, padding: '80px 24px', textAlign: 'center' }}>
