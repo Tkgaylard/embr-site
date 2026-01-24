@@ -148,13 +148,13 @@ export default function Home() {
 }}>
   {!submitted ? (
     <>
-      <form
-        action="https://kickofflabs.com/waitlist/embr-referral-revolution"
-        method="POST"
-        target="kol_iframe"
-        onSubmit={() => setTimeout(() => setSubmitted(true), 500)}
-        style={{ display: 'flex', gap: '12px', marginBottom: '12px' }}
-      >
+<form
+  onSubmit={(e) => {
+    e.preventDefault()
+    setTimeout(() => setSubmitted(true), 1000)
+  }}
+  style={{ display: 'flex', gap: '12px', marginBottom: '12px' }}
+>
         <input
           type="email"
           name="email"
@@ -193,7 +193,6 @@ export default function Home() {
       <p style={{ fontSize: '12px', color: '#57534e', margin: 0 }}>
         No spam. Just updates on our launch.
       </p>
-      <iframe name="kol_iframe" style={{ display: 'none' }} />
     </>
   ) : (
     <div style={{
