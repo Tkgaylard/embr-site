@@ -138,70 +138,82 @@ export default function Home() {
           Join the waitlist for early access.
         </p>
 
-        {/* Email Capture */}
-        <div style={{
-          width: '100%',
-          maxWidth: '420px',
-          opacity: isLoaded ? 1 : 0,
-          transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
-          transition: 'all 0.8s ease 0.55s'
-        }}>
-          {!submitted ? (
-            <>
-              <div style={{ display: 'flex', gap: '12px', marginBottom: '12px' }}>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  style={{
-                    flex: 1,
-                    padding: '16px 20px',
-                    backgroundColor: BLACK,
-                    border: '1px solid #292524',
-                    borderRadius: '8px',
-                    color: 'white',
-                    fontSize: '14px',
-                    outline: 'none'
-                  }}
-                />
-                <button
-                  onClick={() => email && setSubmitted(true)}
-                  style={{
-                    padding: '16px 24px',
-                    backgroundColor: '#E07850',
-                    border: 'none',
-                    borderRadius: '8px',
-                    color: 'white',
-                    fontSize: '14px',
-                    fontWeight: 500,
-                    cursor: 'pointer',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  Join Waitlist
-                </button>
-              </div>
-              <p style={{ fontSize: '12px', color: '#57534e', margin: 0 }}>
-                No spam. Just updates on our launch.
-              </p>
-            </>
-          ) : (
-            <div style={{
-              padding: '24px',
-              backgroundColor: 'rgba(224, 120, 80, 0.1)',
-              borderRadius: '12px',
-              border: '1px solid rgba(224, 120, 80, 0.25)'
-            }}>
-              <p style={{ color: '#E07850', fontSize: '18px', fontWeight: 500, margin: '0 0 6px 0' }}>
-                You&apos;re in.
-              </p>
-              <p style={{ color: '#78716c', fontSize: '14px', margin: 0 }}>
-                We&apos;ll let you know when we launch.
-              </p>
-            </div>
-          )}
-        </div>
+{/* Email Capture */}
+<div style={{
+  width: '100%',
+  maxWidth: '420px',
+  opacity: isLoaded ? 1 : 0,
+  transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+  transition: 'all 0.8s ease 0.55s'
+}}>
+  {!submitted ? (
+    <>
+      <div style={{ display: 'flex', gap: '12px', marginBottom: '12px' }}>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your email"
+          style={{
+            flex: 1,
+            padding: '16px 20px',
+            backgroundColor: BLACK,
+            border: '1px solid #292524',
+            borderRadius: '8px',
+            color: 'white',
+            fontSize: '14px',
+            outline: 'none'
+          }}
+        />
+        <button
+          onClick={async () => {
+            if (!email) return
+            try {
+              await fetch('https://api.kickofflabs.com/v1/192778/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email })
+              })
+              setSubmitted(true)
+            } catch (err) {
+              setSubmitted(true) // Still show success to user
+            }
+          }}
+          style={{
+            padding: '16px 24px',
+            backgroundColor: '#E07850',
+            border: 'none',
+            borderRadius: '8px',
+            color: 'white',
+            fontSize: '14px',
+            fontWeight: 500,
+            cursor: 'pointer',
+            whiteSpace: 'nowrap'
+          }}
+        >
+          Join Waitlist
+        </button>
+      </div>
+      <p style={{ fontSize: '12px', color: '#57534e', margin: 0 }}>
+        No spam. Just updates on our launch.
+      </p>
+    </>
+  ) : (
+    <div style={{
+      padding: '24px',
+      backgroundColor: 'rgba(224, 120, 80, 0.1)',
+      borderRadius: '12px',
+      border: '1px solid rgba(224, 120, 80, 0.25)'
+    }}>
+      <p style={{ color: '#E07850', fontSize: '18px', fontWeight: 500, margin: '0 0 6px 0' }}>
+        You&apos;re in.
+      </p>
+      <p style={{ color: '#78716c', fontSize: '14px', margin: 0 }}>
+        We&apos;ll let you know when we launch.
+      </p>
+    </div>
+  )}
+</div>
       </section>
 
       {/* ============ VALUES SECTION ============ */}
