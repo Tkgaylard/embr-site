@@ -165,30 +165,25 @@ export default function Home() {
             outline: 'none'
           }}
         />
-        <button
-          onClick={() => {
-  if (!email) return
-  // @ts-ignore - KOL is loaded from external script
-  if (window.KOL) {
-    // @ts-ignore
-    window.KOL.signup('404333', { email: email })
-  }
-  setSubmitted(true)
-}}
-          style={{
-            padding: '16px 24px',
-            backgroundColor: '#E07850',
-            border: 'none',
-            borderRadius: '8px',
-            color: 'white',
-            fontSize: '14px',
-            fontWeight: 500,
-            cursor: 'pointer',
-            whiteSpace: 'nowrap'
-          }}
-        >
-          Join Waitlist
-        </button>
+<button
+  onClick={() => {
+    if (!email) return
+    setSubmitted(true)
+  }}
+  style={{
+    padding: '16px 24px',
+    backgroundColor: '#E07850',
+    border: 'none',
+    borderRadius: '8px',
+    color: 'white',
+    fontSize: '14px',
+    fontWeight: 500,
+    cursor: 'pointer',
+    whiteSpace: 'nowrap'
+  }}
+>
+  Join Waitlist
+</button>
       </div>
       <p style={{ fontSize: '12px', color: '#57534e', margin: 0 }}>
         No spam. Just updates on our launch.
