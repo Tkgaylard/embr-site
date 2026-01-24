@@ -81,20 +81,42 @@ export default function Home() {
         </div>
 
         {/* Logo */}
-        <div style={{
-          opacity: isLoaded ? 1 : 0,
-          transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
-          transition: 'all 0.8s ease 0.15s',
-          marginBottom: '20px'
-        }}>
-          <Logo width={420} />
-        </div>
+const Logo = ({ width = 280, color = "#E07850", glow = false }: { width?: number, color?: string, glow?: boolean }) => (
+  <svg 
+    viewBox="0 0 225 50" 
+    width={width} 
+    height={width * 0.222}
+    fill="none" 
+    stroke={color}
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    style={{
+      filter: glow 
+        ? `drop-shadow(0 0 8px ${color}) drop-shadow(0 0 25px ${color}80) drop-shadow(0 0 50px ${color}40)` 
+        : 'none'
+    }}
+  >
+    <path d="M 5 2 L 35 2" />
+    <path d="M 5 25 L 28 25" />
+    <path d="M 5 48 L 35 48" />
+    <path d="M 50 2 L 69 30 L 88 2" />
+    <path d="M 50 12 L 50 48" />
+    <path d="M 88 12 L 88 48" />
+    <path d="M 105 2 L 105 48" />
+    <path d="M 111 2 L 124 2 Q 136 2 136 13.5 Q 136 25 124 25 L 111 25" />
+    <path d="M 111 25 L 127 25 Q 141 25 141 36.5 Q 141 48 127 48 L 111 48" />
+    <path d="M 158 2 L 158 48" />
+    <path d="M 164 2 L 179 2 Q 193 2 193 13.5 Q 193 25 179 25 L 164 25" />
+    <path d="M 174 25 L 202 48" />
+  </svg>
+)
 
         {/* Secondary Tagline */}
         <p style={{
           fontSize: '16px',
           fontWeight: 300,
-          color: '#78716c',
+          color: 'white',
           letterSpacing: '2px',
           margin: '0 0 64px 0',
           opacity: isLoaded ? 1 : 0,
