@@ -13,9 +13,9 @@ const Logo = ({ width = 280, color = "#E07850", glow = false }: { width?: number
     strokeWidth="2.2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    style={{
+style={{
       filter: glow 
-        ? `drop-shadow(0 0 8px ${color}) drop-shadow(0 0 25px ${color}80) drop-shadow(0 0 50px ${color}40)` 
+        ? `drop-shadow(0 0 6px ${color}90) drop-shadow(0 0 20px ${color}50) drop-shadow(0 0 35px ${color}25)` 
         : 'none'
     }}
   >
