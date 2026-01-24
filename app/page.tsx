@@ -200,42 +200,43 @@ export default function Home() {
       </section>
 
       {/* ============ VALUES SECTION ============ */}
-      <section style={{ backgroundColor: BLACK, padding: '80px 24px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <p style={{
-            fontSize: '10px',
-            letterSpacing: '4px',
-            color: '#57534e',
-            textTransform: 'uppercase',
-            textAlign: 'center',
-            marginBottom: '56px'
-          }}>
-            What We Believe
-          </p>
+{/* ============ VALUES SECTION ============ */}
+<section style={{ backgroundColor: BLACK, padding: '100px 24px' }}>
+  <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+    <p style={{
+      fontSize: '11px',
+      letterSpacing: '4px',
+      color: '#57534e',
+      textTransform: 'uppercase',
+      textAlign: 'center',
+      marginBottom: '72px'
+    }}>
+      What We Believe
+    </p>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '40px'
-          }}>
-            <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '40px', fontWeight: 200, color: '#1a1a1a', margin: '0 0 8px 0' }}>01</p>
-              <h3 style={{ fontSize: '18px', fontWeight: 400, color: 'white', margin: '0 0 10px 0' }}>Transparency</h3>
-              <p style={{ fontSize: '14px', color: '#78716c', lineHeight: 1.7, margin: 0 }}>Every ingredient, every source, every test result. Published, not hidden.</p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '40px', fontWeight: 200, color: '#1a1a1a', margin: '0 0 8px 0' }}>02</p>
-              <h3 style={{ fontSize: '18px', fontWeight: 400, color: 'white', margin: '0 0 10px 0' }}>Precision</h3>
-              <p style={{ fontSize: '14px', color: '#78716c', lineHeight: 1.7, margin: 0 }}>100-200% DV. No mega-doses. Your body uses what it needs.</p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '40px', fontWeight: 200, color: '#1a1a1a', margin: '0 0 8px 0' }}>03</p>
-              <h3 style={{ fontSize: '18px', fontWeight: 400, color: 'white', margin: '0 0 10px 0' }}>Evolution</h3>
-              <p style={{ fontSize: '14px', color: '#78716c', lineHeight: 1.7, margin: 0 }}>Track, measure, adjust. Your formula grows with you.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+      gap: '56px'
+    }}>
+      <div style={{ textAlign: 'center' }}>
+        <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>01</p>
+        <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Transparency</h3>
+        <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>Every ingredient, every source, every test result. Published, not hidden.</p>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>02</p>
+        <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Precision</h3>
+        <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>100-200% DV. No mega-doses. Your body uses what it needs.</p>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>03</p>
+        <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Evolution</h3>
+        <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>Track, measure, adjust. Your formula grows with you.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ============ BOTTOM CTA ============ */}
       <section style={{ backgroundColor: BLACK, padding: '80px 24px', textAlign: 'center' }}>
