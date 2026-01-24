@@ -166,19 +166,15 @@ export default function Home() {
           }}
         />
         <button
-          onClick={async () => {
-            if (!email) return
-            try {
-              await fetch('https://api.kickofflabs.com/v1/192778/subscribe', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email })
-              })
-              setSubmitted(true)
-            } catch (err) {
-              setSubmitted(true) // Still show success to user
-            }
-          }}
+          onClick={() => {
+  if (!email) return
+  // @ts-ignore - KOL is loaded from external script
+  if (window.KOL) {
+    // @ts-ignore
+    window.KOL.signup('404333', { email: email })
+  }
+  setSubmitted(true)
+}}
           style={{
             padding: '16px 24px',
             backgroundColor: '#E07850',
