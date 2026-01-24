@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 // ============ LOGO COMPONENT ============
 const Logo = ({ width = 280, color = "#E07850", glow = false }: { width?: number, color?: string, glow?: boolean }) => (
   <svg 
-    viewBox="0 0 225 50" 
+    viewBox="0 0 207 50" 
     width={width} 
     height={width * 0.222}
     fill="none" 
@@ -226,12 +226,12 @@ export default function Home() {
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>01</p>
               <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Transparency</h3>
-              <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>Every ingredient, every source, every test result. Published, not hidden.</p>
+              <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>Clear labels, real ingredients. Nothing hidden, nothing unnecessary.</p>
             </div>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>02</p>
               <h3 style={{ fontSize: '22px', fontWeight: 400, color: 'white', margin: '0 0 14px 0' }}>Precision</h3>
-              <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>100-200% DV. No mega-doses. Your body uses what it needs.</p>
+              <p style={{ fontSize: '15px', color: '#78716c', lineHeight: 1.8, margin: 0 }}>100-200% DV. No mega-doses. Your body gets what it needs.</p>
             </div>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: '56px', fontWeight: 200, color: '#E07850', margin: '0 0 12px 0' }}>03</p>
