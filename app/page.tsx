@@ -148,12 +148,20 @@ export default function Home() {
 }}>
   {!submitted ? (
     <>
-      <div style={{ display: 'flex', gap: '12px', marginBottom: '12px' }}>
+      <form
+        action="https://kickofflabs.com/waitlist/embr-referral-revolution"
+        method="POST"
+        target="kol_iframe"
+        onSubmit={() => setTimeout(() => setSubmitted(true), 500)}
+        style={{ display: 'flex', gap: '12px', marginBottom: '12px' }}
+      >
         <input
           type="email"
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
+          required
           style={{
             flex: 1,
             padding: '16px 20px',
@@ -165,29 +173,27 @@ export default function Home() {
             outline: 'none'
           }}
         />
-<button
-  onClick={() => {
-    if (!email) return
-    setSubmitted(true)
-  }}
-  style={{
-    padding: '16px 24px',
-    backgroundColor: '#E07850',
-    border: 'none',
-    borderRadius: '8px',
-    color: 'white',
-    fontSize: '14px',
-    fontWeight: 500,
-    cursor: 'pointer',
-    whiteSpace: 'nowrap'
-  }}
->
-  Join Waitlist
-</button>
-      </div>
+        <button
+          type="submit"
+          style={{
+            padding: '16px 24px',
+            backgroundColor: '#E07850',
+            border: 'none',
+            borderRadius: '8px',
+            color: 'white',
+            fontSize: '14px',
+            fontWeight: 500,
+            cursor: 'pointer',
+            whiteSpace: 'nowrap'
+          }}
+        >
+          Join Waitlist
+        </button>
+      </form>
       <p style={{ fontSize: '12px', color: '#57534e', margin: 0 }}>
         No spam. Just updates on our launch.
       </p>
+      <iframe name="kol_iframe" style={{ display: 'none' }} />
     </>
   ) : (
     <div style={{
@@ -205,8 +211,6 @@ export default function Home() {
     </div>
   )}
 </div>
-      </section>
-
       {/* ============ VALUES SECTION ============ */}
       <section style={{ backgroundColor: BLACK, padding: '100px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
