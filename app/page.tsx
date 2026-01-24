@@ -94,7 +94,7 @@ export default function Home() {
         <p style={{
           fontSize: '16px',
           fontWeight: 300,
-          color: '#78716c',
+          color: 'white',
           letterSpacing: '2px',
           margin: '0 0 64px 0',
           opacity: isLoaded ? 1 : 0,
