@@ -1,0 +1,21 @@
+<svg viewBox="0 0 225 50" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#E07850" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- E - 3 floating bars -->
+  <path d="M 5 2 L 35 2"/>
+  <path d="M 5 25 L 28 25"/>
+  <path d="M 5 48 L 35 48"/>
+  
+  <!-- M - V + stems -->
+  <path d="M 50 2 L 69 30 L 88 2"/>
+  <path d="M 50 12 L 50 48"/>
+  <path d="M 88 12 L 88 48"/>
+  
+  <!-- B - stem + bowls -->
+  <path d="M 105 2 L 105 48"/>
+  <path d="M 111 2 L 124 2 Q 136 2 136 13.5 Q 136 25 124 25 L 111 25"/>
+  <path d="M 111 25 L 127 25 Q 141 25 141 36.5 Q 141 48 127 48 L 111 48"/>
+  
+  <!-- R - stem + bowl + kick -->
+  <path d="M 158 2 L 158 48"/>
+  <path d="M 164 2 L 179 2 Q 193 2 193 13.5 Q 193 25 179 25 L 164 25"/>
+  <path d="M 174 25 L 202 48"/>
+</svg>
