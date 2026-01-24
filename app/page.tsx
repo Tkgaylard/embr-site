@@ -29,6 +29,9 @@ const Logo = ({ width = 280, color = "#E07850" }: { width?: number, color?: stri
   </svg>
 )
 
+// ============ PURE BLACK EVERYWHERE ============
+const BLACK = '#000000'
+
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [email, setEmail] = useState('')
@@ -40,79 +43,80 @@ export default function Home() {
 
   return (
     <main style={{
-  minHeight: '100vh',
-  backgroundColor: '#000000',  // <-- Pure black
-  color: 'white',
-  fontFamily: "'Poppins', 'Segoe UI', system-ui, sans-serif"
-}}>
+      minHeight: '100vh',
+      backgroundColor: BLACK,
+      color: 'white',
+      fontFamily: "'Poppins', 'Segoe UI', system-ui, sans-serif"
+    }}>
       
       {/* ============ HERO SECTION ============ */}
-<section style={{
-  minHeight: '100vh',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: '60px 24px',
-  textAlign: 'center'
-}}>
-  {/* Coming Soon Badge */}
-  <div style={{
-    opacity: isLoaded ? 1 : 0,
-    transform: isLoaded ? 'translateY(0)' : 'translateY(-20px)',
-    transition: 'all 0.8s ease',
-    marginBottom: '56px'
-  }}>
-    <span style={{
-      fontSize: '10px',
-      letterSpacing: '4px',
-      color: '#57534e',
-      textTransform: 'uppercase',
-      padding: '8px 16px',
-      border: '1px solid #292524',
-      borderRadius: '20px'
-    }}>
-      Coming Soon
-    </span>
-  </div>
+      <section style={{
+        minHeight: '100vh',
+        backgroundColor: BLACK,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '60px 24px',
+        textAlign: 'center'
+      }}>
+        {/* Coming Soon Badge */}
+        <div style={{
+          opacity: isLoaded ? 1 : 0,
+          transform: isLoaded ? 'translateY(0)' : 'translateY(-20px)',
+          transition: 'all 0.8s ease',
+          marginBottom: '56px'
+        }}>
+          <span style={{
+            fontSize: '10px',
+            letterSpacing: '4px',
+            color: '#57534e',
+            textTransform: 'uppercase',
+            padding: '8px 16px',
+            border: '1px solid #292524',
+            borderRadius: '20px'
+          }}>
+            Coming Soon
+          </span>
+        </div>
 
-  {/* Logo - THE STAR */}
-  <div style={{
-    opacity: isLoaded ? 1 : 0,
-    transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
-    transition: 'all 0.8s ease 0.15s',
-    marginBottom: '20px'
-  }}>
-    <Logo width={420} />
-  </div>
+        {/* Logo */}
+        <div style={{
+          opacity: isLoaded ? 1 : 0,
+          transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+          transition: 'all 0.8s ease 0.15s',
+          marginBottom: '20px'
+        }}>
+          <Logo width={420} />
+        </div>
 
-  {/* Secondary Tagline - tight to logo */}
-  <p style={{
-    fontSize: '16px',
-    fontWeight: 300,
-    color: '#78716c',
-    letterSpacing: '2px',
-    margin: '0 0 64px 0',
-    opacity: isLoaded ? 1 : 0,
-    transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
-    transition: 'all 0.8s ease 0.25s'
-  }}>
-    The lasting glow.
-  </p>
+        {/* Secondary Tagline */}
+        <p style={{
+          fontSize: '16px',
+          fontWeight: 300,
+          color: '#78716c',
+          letterSpacing: '2px',
+          margin: '0 0 64px 0',
+          opacity: isLoaded ? 1 : 0,
+          transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+          transition: 'all 0.8s ease 0.25s'
+        }}>
+          The lasting glow.
+        </p>
 
-  {/* Primary Tagline - supporting role now */}
-  <h1 style={{
-    fontSize: 'clamp(22px, 4vw, 32px)',
-    fontWeight: 300,
-    color: '#E07850',
-    margin: '0 0 20px 0',
-    letterSpacing: '-0.5px',
-    opacity: isLoaded ? 1 : 0,
-    transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
-    transition: 'all 0.8s ease 0.35s'
-  }}>
-    Your formula, not theirs.
-  </h1>
+        {/* Primary Tagline */}
+        <h1 style={{
+          fontSize: 'clamp(22px, 4vw, 32px)',
+          fontWeight: 300,
+          color: '#E07850',
+          margin: '0 0 20px 0',
+          letterSpacing: '-0.5px',
+          opacity: isLoaded ? 1 : 0,
+          transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
+          transition: 'all 0.8s ease 0.35s'
+        }}>
+          Your formula, not theirs.
+        </h1>
 
         {/* Description */}
         <p style={{
@@ -148,7 +152,7 @@ export default function Home() {
                   style={{
                     flex: 1,
                     padding: '16px 20px',
-                    backgroundColor: '#1a1a1a',
+                    backgroundColor: BLACK,
                     border: '1px solid #292524',
                     borderRadius: '8px',
                     color: 'white',
@@ -196,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* ============ VALUES SECTION ============ */}
-      <section style={{ backgroundColor: '#000000', padding: '80px 24px' }}>
+      <section style={{ backgroundColor: BLACK, padding: '80px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <p style={{
             fontSize: '10px',
@@ -215,17 +219,17 @@ export default function Home() {
             gap: '40px'
           }}>
             <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '40px', fontWeight: 200, color: '#292524', margin: '0 0 8px 0' }}>01</p>
+              <p style={{ fontSize: '40px', fontWeight: 200, color: '#1a1a1a', margin: '0 0 8px 0' }}>01</p>
               <h3 style={{ fontSize: '18px', fontWeight: 400, color: 'white', margin: '0 0 10px 0' }}>Transparency</h3>
               <p style={{ fontSize: '14px', color: '#78716c', lineHeight: 1.7, margin: 0 }}>Every ingredient, every source, every test result. Published, not hidden.</p>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '40px', fontWeight: 200, color: '#292524', margin: '0 0 8px 0' }}>02</p>
+              <p style={{ fontSize: '40px', fontWeight: 200, color: '#1a1a1a', margin: '0 0 8px 0' }}>02</p>
               <h3 style={{ fontSize: '18px', fontWeight: 400, color: 'white', margin: '0 0 10px 0' }}>Precision</h3>
               <p style={{ fontSize: '14px', color: '#78716c', lineHeight: 1.7, margin: 0 }}>100-200% DV. No mega-doses. Your body uses what it needs.</p>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '40px', fontWeight: 200, color: '#292524', margin: '0 0 8px 0' }}>03</p>
+              <p style={{ fontSize: '40px', fontWeight: 200, color: '#1a1a1a', margin: '0 0 8px 0' }}>03</p>
               <h3 style={{ fontSize: '18px', fontWeight: 400, color: 'white', margin: '0 0 10px 0' }}>Evolution</h3>
               <p style={{ fontSize: '14px', color: '#78716c', lineHeight: 1.7, margin: 0 }}>Track, measure, adjust. Your formula grows with you.</p>
             </div>
@@ -234,7 +238,7 @@ export default function Home() {
       </section>
 
       {/* ============ BOTTOM CTA ============ */}
-      <section style={{ backgroundColor: '#000000', padding: '80px 24px', textAlign: 'center' }}>
+      <section style={{ backgroundColor: BLACK, padding: '80px 24px', textAlign: 'center' }}>
         <p style={{
           fontSize: 'clamp(18px, 4vw, 26px)',
           fontWeight: 300,
@@ -248,16 +252,16 @@ export default function Home() {
         </p>
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
-          <div style={{ width: '40px', height: '1px', backgroundColor: '#000000' }} />
+          <div style={{ width: '40px', height: '1px', backgroundColor: '#292524' }} />
           <span style={{ fontSize: '10px', letterSpacing: '3px', color: '#57534e', textTransform: 'uppercase' }}>
             myembr.ca
           </span>
-          <div style={{ width: '40px', height: '1px', backgroundColor: '#000000' }} />
+          <div style={{ width: '40px', height: '1px', backgroundColor: '#292524' }} />
         </div>
       </section>
 
       {/* ============ FOOTER ============ */}
-      <footer style={{ borderTop: '1px solid #292524', padding: '28px 24px' }}>
+      <footer style={{ backgroundColor: BLACK, borderTop: '1px solid #292524', padding: '28px 24px' }}>
         <div style={{
           display: 'flex',
           flexWrap: 'wrap',
