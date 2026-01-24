@@ -196,7 +196,7 @@ export default function Home() {
       </section>
 
       {/* ============ VALUES SECTION ============ */}
-      <section style={{ backgroundColor: '#0a0a0a', padding: '80px 24px' }}>
+      <section style={{ backgroundColor: '#000000', padding: '80px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <p style={{
             fontSize: '10px',
@@ -248,11 +248,11 @@ export default function Home() {
         </p>
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
-          <div style={{ width: '40px', height: '1px', backgroundColor: '#3d3d3d' }} />
+          <div style={{ width: '40px', height: '1px', backgroundColor: '#000000' }} />
           <span style={{ fontSize: '10px', letterSpacing: '3px', color: '#57534e', textTransform: 'uppercase' }}>
             myembr.ca
           </span>
-          <div style={{ width: '40px', height: '1px', backgroundColor: '#3d3d3d' }} />
+          <div style={{ width: '40px', height: '1px', backgroundColor: '#000000' }} />
         </div>
       </section>
 
