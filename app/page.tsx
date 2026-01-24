@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 // ============ LOGO COMPONENT ============
 const Logo = ({ width = 280, color = "#E07850", glow = false }: { width?: number, color?: string, glow?: boolean }) => (
   <svg 
-    viewBox="0 0 207 50" 
+    viewBox="0 0 197 50" 
     width={width} 
     height={width * 0.222}
     fill="none" 
