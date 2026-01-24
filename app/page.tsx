@@ -200,7 +200,6 @@ export default function Home() {
       </section>
 
       {/* ============ VALUES SECTION ============ */}
-{/* ============ VALUES SECTION ============ */}
 <section style={{ backgroundColor: BLACK, padding: '100px 24px' }}>
   <div style={{ maxWidth: '900px', margin: '0 auto' }}>
     <p style={{
